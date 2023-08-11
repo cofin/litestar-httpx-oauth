@@ -20,7 +20,7 @@ version = "0.0.1"
 
 [tool.poetry.dependencies]
 httpx-oauth=">=0.13.0"
-litestar=">=2.0.0b4"
+litestar=">=2.0.0rc1"
 python = ">=3.8,<3.12"
 
 [tool.poetry.group.dev.dependencies]
