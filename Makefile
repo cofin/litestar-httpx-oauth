@@ -44,7 +44,7 @@ upgrade:									## Upgrade all dependencies to the latest stable versions
 install:									## Install the project in dev mode.
 	@if ! poetry --version > /dev/null; then echo 'poetry is required, installing from from https://install.python-poetry.org'; curl -sSL https://install.python-poetry.org | python3 -; fi
 	@if [ "$(VENV_EXISTS)" ]; then echo "Removing existing environment" && rm -Rf .venv;  fi
-	@if [ "$(USING_POETRY)" ]; then poetry config virtualenvs.in-project true --local  && poetry config virtualenvs.options.always-copy true --local && python3 -m venv --copies .venv && source $(ENV_PREFIX)/activate && $(ENV_PREFIX)/pip3 install -U cython pip nodeenv && poetry install --with linting,dev,docs; fi
+	@if [ "$(USING_POETRY)" ]; then poetry config virtualenvs.in-project true --local  && poetry config virtualenvs.options.always-copy true --local && python3 -m venv --copies .venv && source $(ENV_PREFIX)/activate && $(ENV_PREFIX)/pip3 install -U cython pip nodeenv && poetry install --with dev; fi
 	@echo "=> Install complete.  ** If you want to re-install re-run 'make install'"
 
 

@@ -16,7 +16,7 @@ class OAuth2AuthorizeCallback:
         client: BaseOAuth2,
         route_name: Optional[str] = None,
         redirect_url: Optional[str] = None,
-    ):
+    ) -> None:
         assert (route_name is not None and redirect_url is None) or (
             route_name is None and redirect_url is not None
         ), "You should either set route_name or redirect_url"
@@ -43,8 +43,6 @@ class OAuth2AuthorizeCallback:
         elif self.redirect_url:
             redirect_url = self.redirect_url
 
-        access_token = await self.client.get_access_token(
-            code, redirect_url, code_verifier
-        )
+        access_token = await self.client.get_access_token(code, redirect_url, code_verifier)
 
         return access_token, state

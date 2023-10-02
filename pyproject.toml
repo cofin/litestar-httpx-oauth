@@ -19,19 +19,19 @@ repository = "https://github.com/cofin/litestar_httpx_oauth"
 version = "0.0.1"
 
 [tool.poetry.dependencies]
-httpx-oauth=">=0.13.0"
-litestar=">=2.0.0rc1"
+httpx-oauth = ">=0.13.0"
+litestar = ">=2.0.0rc1"
 python = ">=3.8,<3.12"
 
 [tool.poetry.group.dev.dependencies]
+black = "*"
 coverage = {extras = ["toml"], version = "*"}
+mypy = ">=1.0.0"
+pre-commit = "*"
 pytest = "*"
 pytest-asyncio = "*"
 pytest-cov = "*"
 pytest-mock = "*"
-black = "*"
-mypy = ">=1.0.0"
-pre-commit = "*"
 ruff = '*'
 
 [tool.ruff]
@@ -116,7 +116,7 @@ select = [
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 src = ["litestar_httpx_oauth", "tests/"]
-target-version = "py8"
+target-version = "py38"
 
 [tool.ruff.mccabe]
 max-complexity = 12
